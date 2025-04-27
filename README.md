@@ -1,6 +1,51 @@
-# Maij-Ndogo_mysql
+# 💧 Water Access - SQL Analysis
 
-# SQL Queries Description
+The md_water_services database provides detailed information on water access and quality across various locations. It contains data collected by field employees through site visits, including water source types, quality assessments, pollution tests, and service coverage statistics.
+This dataset supports analysis of water service delivery efficiency, community impact, and helps identify opportunities for improving access to clean water.
+
+---
+
+# 📚 Table of Contents
+
+- [1. Generate Employee Emails](#1-generate-employee-emails)
+- [2. Disable SQL Safe Updates](#2-disable-sql-safe-updates)
+- [3. Update Employee Emails](#3-update-employee-emails)
+- [4. Switch to md_water_services Database](#4-switch-to-md_water_services-database)
+- [5. Compare Phone Number Lengths](#5-compare-phone-number-lengths)
+- [6. View Trimmed Addresses](#6-view-trimmed-addresses)
+- [7. Update Trimmed Phone Numbers](#7-update-trimmed-phone-numbers)
+- [8. Count Employees per Town](#8-count-employees-per-town)
+- [9. Find Employees with Fewest Visits](#9-find-employees-with-fewest-visits)
+- [10. Count Locations per Town](#10-count-locations-per-town)
+- [11. Count Locations by Province and Town](#11-count-locations-by-province-and-town)
+- [12. Count Locations per Type](#12-count-locations-per-type)
+- [13. Total People Served (Water Sources)](#13-total-people-served-water-sources)
+- [14. Group Water Sources by Type](#14-group-water-sources-by-type)
+- [15. Calculate Percentage of People Served](#15-calculate-percentage-of-people-served)
+- [16. Rank Water Source Types](#16-rank-water-source-types)
+- [17. Rank Water Sources within Type](#17-rank-water-sources-within-type)
+- [18. View All Visits](#18-view-all-visits)
+- [19. Survey Duration](#19-survey-duration)
+- [20. Average Queue Time](#20-average-queue-time)
+- [21. Average Queue Time by Hour](#21-average-queue-time-by-hour)
+- [22. Average Queue Time by Day of the Week](#22-average-queue-time-by-day-of-the-week)
+- [23. Formatted Visit Dates](#23-formatted-visit-dates)
+- [24. Yearly Water Basin Access Changes](#24-yearly-water-basin-access-changes)
+- [25. Running Average Queue Time](#25-running-average-queue-time)
+- [26. View All Employees](#26-view-all-employees)
+- [27. Count Employees in Dahabu](#27-count-employees-in-dahabu)
+- [28. Count Employees in Harare (Kilimani)](#28-count-employees-in-harare-kilimani)
+- [29. Use Database md_water_services](#29-use-database-md_water_services)
+- [30. View Visits Table (First 5 Records)](#30-view-visits-table-first-5-records)
+- [31. View Water Quality Table (First 5 Records)](#31-view-water-quality-table-first-5-records)
+- [32. List Incorrect Water Quality Records](#32-list-incorrect-water-quality-records)
+- [33. Count Mistakes per Employee](#33-count-mistakes-per-employee)
+- [34. Identify Suspect Employees](#34-identify-suspect-employees)
+- [35. Find Cash-Related Mistakes](#35-find-cash-related-mistakes)
+
+---
+
+# 📖 SQL Queries Description
 
 | **#** | **Query** | **Purpose** |
 |:---|:---|:---|
@@ -39,4 +84,30 @@
 | 33 | `WITH error_count AS (...)` | Count number of mistakes per employee. |
 | 34 | `WITH suspect_list AS (...)` | Identify employees with mistake counts above the average. |
 | 35 | `SELECT location_id, employee_name, statements FROM incorrect_records WHERE employee_name IN (...) AND statements LIKE '%cash%';` | Find records by suspect employees mentioning "cash" in auditor's notes. |
+
+---
+
+# 📈 Summary of Key Insights
+- Water Access Coverage:
+The dataset tracks the number of people served by different water source types, helping to prioritize resources for the most impactful sources.
+
+- Queue Time Analysis:
+Analysis of visits data reveals the average time people spend waiting for water at different hours and days, identifying peak congestion periods.
+
+- Survey Quality Control:
+By comparing auditor evaluations with field surveyor scores, it’s possible to detect errors and spot employees who may need additional training.
+
+- Geographical Trends:
+Town and province-level breakdowns allow exploration of where water services are strongest and where improvement efforts should focus.
+
+- Well Pollution Risks:
+well_pollution data identifies wells with biological and chemical contamination, helping prioritize urgent interventions.
+
+- Global Access Trends:
+The global_water_access table shows national, rural, and urban trends in water service levels across multiple years.
+
+- Employee Performance:
+By analyzing visit counts and error rates, the organization can monitor employee productivity and data quality.
+
+
 
